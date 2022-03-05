@@ -9,16 +9,21 @@ export default function Drop() {
 
     const [data, setData] = useState([])
 
-    // const [search, setSearch] = useState("")
+    const [search, setSearch] = useState("")
 
     useEffect(() => {
         getData()
         
-      }, [])
+      }, [search])
 
     // const filteredCountry = data.fill((ip) => {
     //      ip.country.includes(search)
     // })
+
+    const submit = (e) => {
+      e.prevenDefault();
+      getData();
+    } 
 
       async function getData(){
         const url = `https://proxypage1.p.rapidapi.com/v1/tier1?type=HTTP&limit=100&country=${nation}`//idhar inpuut dalna hai
@@ -47,6 +52,7 @@ export default function Drop() {
                         onChange={(event) => {
                             setNation(event.target.value)
                         }}
+                        onSubmit={submit}
                         className="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none" >
                             <option value="Please Select Country">Choose Country</option>
                             <option value="US">United States</option>
@@ -62,7 +68,9 @@ export default function Drop() {
                             className="inline-flex justify-center items-center w-42 h-12 px-5 text-base font-bold rounded-full text-white transition duration-150 ease-in-out bg-indigo-400 border border-x-white hover:bg-indigo-700 focus:outline-none active:bg-indigo-700"
                             onChange={(event) => {
                             setSearch(event.target.value)
-                        }}/>
+                            }}
+                            
+                        />
                     </span>
              </div>
              
