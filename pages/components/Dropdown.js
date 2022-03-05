@@ -52,7 +52,7 @@ export default function Drop() {
                         onChange={(event) => {
                             setNation(event.target.value)
                         }}
-                        onSubmit={submit}
+                        
                         className="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none" >
                             <option value="Please Select Country">Choose Country</option>
                             <option value="US">United States</option>
@@ -69,7 +69,7 @@ export default function Drop() {
                             onChange={(event) => {
                             setSearch(event.target.value)
                             }}
-                            
+                            onSubmit={submit}
                         />
                     </span>
              </div>
