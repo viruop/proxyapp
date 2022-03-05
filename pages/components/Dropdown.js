@@ -9,16 +9,10 @@ export default function Drop() {
 
     const [data, setData] = useState([])
 
-    const [search, setSearch] = useState("")
-
     useEffect(() => {
         getData()
         
-      }, [search])
-
-    // const filteredCountry = data.fill((ip) => {
-    //      ip.country.includes(search)
-    // })
+      }, [nation])
 
     const submit = (e) => {
       e.prevenDefault();
@@ -26,7 +20,7 @@ export default function Drop() {
     } 
 
       async function getData(){
-        const url = `https://proxypage1.p.rapidapi.com/v1/tier1?type=HTTP&limit=100&country=${nation}`//idhar inpuut dalna hai
+        const url = `https://proxypage1.p.rapidapi.com/v1/tier1?type=HTTP&limit=100&country=${nation}`
         const result = await fetch(url, {
           "method": "GET",
           "headers": {
@@ -66,9 +60,6 @@ export default function Drop() {
                             type="submit" 
                             value="Get Proxies" 
                             className="inline-flex justify-center items-center w-42 h-12 px-5 text-base font-bold rounded-full text-white transition duration-150 ease-in-out bg-indigo-400 border border-x-white hover:bg-indigo-700 focus:outline-none active:bg-indigo-700"
-                            onChange={(event) => {
-                            setSearch(event.target.value)
-                            }}
                             onSubmit={submit}
                         />
                     </span>
