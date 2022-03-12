@@ -38,9 +38,9 @@ export default function Drop() {
         <>
             <div className="relative flex space-x-4 items-center max-w-md mx-auto mt-12 overflow-hidden text-center rounded-full">   
                 <div className="relative inline-flex">
-                    <svg className="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232">
-                        <path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fillRule="nonzero" />
-                    </svg>
+                <svg className=" w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none" xmlns="http://www.w3.org/2000/svg" >
+                  <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z"/>
+                </svg>
                     <select 
                         value={nation}
                         onChange={(event) => {
@@ -51,8 +51,10 @@ export default function Drop() {
                             <option value="Please Select Country">Choose Country</option>
                             <option value="US">United States</option>
                             <option value="IN">India</option>
-                            <option value="UK">United Kingdom</option>
+                            <option value="TR">Turkey</option>
                             <option value="RU">Russia</option>
+                            <option value="TH">Thailand</option>
+                            <option value="SG">Singapore</option>
                     </select>
                 </div>
                     <span className="relative top-0 right-0 block">       
@@ -66,7 +68,9 @@ export default function Drop() {
              </div>
              
                 {data.map((ip) => (
-                     <Card ip={ip.ip} port={ip.port} latency={ip.latency} country={ip.country} />
+                  
+                     <Card className="" ip={ip.ip} port={ip.port} latency={ip.latency} country={ip.country} />
+                     
                 ))}
         </>
         
