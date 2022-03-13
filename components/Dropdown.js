@@ -11,28 +11,28 @@ export default function Drop() {
 
     useEffect(() => {
         getData()
-        
+        async function getData(){
+          const url = `https://proxypage1.p.rapidapi.com/v1/tier1?type=HTTP&limit=100&country=${nation}`
+          const result = await fetch(url, {
+            "method": "GET",
+            "headers": {
+              "content-type": "application/x-www-form-urlencoded",
+              "x-rapidapi-host": "proxypage1.p.rapidapi.com",
+              "x-rapidapi-key": "a6cc0b0894mshe09d3ef836f5323p120ac3jsn237217fed002"
+            }
+          })
+          const getResult = await result.json();
+          setData(getResult);
+          console.log(getResult)
+        }
       }, [nation])
 
     const submit = (e) => {
       e.prevenDefault();
-      getData();
+      
     } 
 
-      async function getData(){
-        const url = `https://proxypage1.p.rapidapi.com/v1/tier1?type=HTTP&limit=100&country=${nation}`
-        const result = await fetch(url, {
-          "method": "GET",
-          "headers": {
-            "content-type": "application/x-www-form-urlencoded",
-            "x-rapidapi-host": "proxypage1.p.rapidapi.com",
-            "x-rapidapi-key": "a6cc0b0894mshe09d3ef836f5323p120ac3jsn237217fed002"
-          }
-        })
-        const getResult = await result.json();
-        setData(getResult);
-        console.log(getResult)
-      }
+      
 
     return (
         <>
@@ -67,9 +67,9 @@ export default function Drop() {
                     </span>
              </div>
              
-                {data.map((ip) => (
+                {data.map((ip,idx) => (
                   
-                     <Card className="" ip={ip.ip} port={ip.port} latency={ip.latency} country={ip.country} />
+                     <Card key={idx} className="" ip={ip.ip} port={ip.port} latency={ip.latency} country={ip.country} />
                      
                 ))}
         </>
