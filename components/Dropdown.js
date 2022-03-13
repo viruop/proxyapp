@@ -36,7 +36,7 @@ export default function Drop() {
 
     return (
         <>
-            <div className="relative flex space-x-4 items-center max-w-md mx-auto mt-12 overflow-hidden text-center rounded-full">   
+            <div className="relative flex space-x-4 items-center max-w-[21rem] mx-auto mt-12 mb-[1.5rem] overflow-hidden text-center rounded-full">   
                 <div className="relative inline-flex">
                 <svg className=" w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none" xmlns="http://www.w3.org/2000/svg" >
                   <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z"/>
