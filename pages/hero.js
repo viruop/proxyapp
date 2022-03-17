@@ -12,7 +12,7 @@ export default function Example() {
         If you are ready to change the way you get proxies, then you`ll want to use our mera app to make it fun and easy!
         </div>
         <Drop />
-        <div className="mt-8 text-sm text-indigo-300">By signing up, you agree to our terms and services hi.</div>
+        <div className="mt-8 mb-[1.6rem] text-sm text-indigo-300 ">By signing up, you agree to our terms and services hi.</div>
       </div>
     </section></>
   )

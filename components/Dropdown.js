@@ -66,12 +66,11 @@ export default function Drop() {
                         />
                     </span>
              </div>
-             
+                <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:auto-cols-auto gap-6">
                 {data.map((ip,idx) => (
-                  
-                     <Card key={idx} className="" ip={ip.ip} port={ip.port} latency={ip.latency} country={ip.country} />
-                     
+                    <Card key={idx} ip={ip.ip} port={ip.port} latency={ip.latency} country={ip.country} />                
                 ))}
+                </div>
         </>
         
     );
